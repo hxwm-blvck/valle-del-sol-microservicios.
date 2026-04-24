@@ -10,7 +10,24 @@ public class ReporteFactory {
         reporte.setDescripcion(descripcion);
 
         switch (tipo.toUpperCase()){
-            case "Brigadista"
+            case "BRIGADISTA":
+            case "BOMBEROS":
+                reporte.setPrioridad("ALTA");
+                reporte.setEstado("VERIFICADO"); // Confiamos en los profesionales
+                break;
+            case "VECINO":
+                reporte.setPrioridad("MEDIA");
+                reporte.setEstado("PENDIENTE_VALIDACION"); // Requiere que alguien lo confirme
+                break;
+            case "SENSOR":
+                reporte.setPrioridad("CRITICA");
+                reporte.setEstado("VERIFICADO_AUTOMATICO"); // Las máquinas no suelen mentir
+                break;
+            default:
+                reporte.setPrioridad("BAJA");
+                reporte.setEstado("NO_CLASIFICADO");
+                break;
         }
+        return reporte;
     }
 }
