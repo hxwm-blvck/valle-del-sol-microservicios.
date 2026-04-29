@@ -1,5 +1,7 @@
 package com.valledelsol.reportes_service.factory;
 
+import com.valledelsol.reportes_service.model.Reporte;
+
 public class ReporteFactory {
 
     public static Reporte crearReporte(Double latitud, Double longitud, String tipo, String descripcion){
