@@ -16,7 +16,6 @@ public class Reporte {
     private Double latitud;
     private Double longitud;
     private String descripcion;
-
     private String tipo;
     private String prioridad;
     private String estado;
